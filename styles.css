@@ -72,9 +72,11 @@ header .profile-image {
   border-radius: 50%;
   border: 3px solid white;
   transition: all .5s;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, .6);
 }
 header .profile-image:hover {
   transform: scale(1.2) rotate(5deg);
+  box-shadow: 0 0 12px rgba(0, 0, 0, .5);
 }
 .tag {
   background-color: #efefef;
@@ -88,9 +90,9 @@ header .profile-image:hover {
   background-color: #222;
   color: yellow;
 }
-.card {
+.card, .card.small, .cardimage {
   margin: 30px;
-  padding: 20px 40px 40px;
+  padding: 20px 40px 20px;
   max-width: 500px;
   text-align: left;
   background: #fff;
@@ -98,8 +100,37 @@ header .profile-image:hover {
   border-radius: 6px;
   transition: all .5s;
 }
-.card:hover {
+.card:hover, .cardimage:hover {
   border-color: #ff99ff;
+}
+.card img{
+  max-width: 120px;
+}
+.card.small{
+  width: 340px;
+}
+.cardimage{
+  width: 340px;
+  padding: 0;
+}
+.cardimage a{
+  width: 100%;
+  height: 100%;
+  margin-bottom: -5px;
+  padding: 0;
+}
+.cardimage img{
+  margin-bottom: -4px;
+  width: 100%;
+}
+
+#hobbies{
+  display: table;
+  margin: 0 auto;
+}
+
+#hobbies img{
+  margin: 2px;
 }
 
 ul.skills {
@@ -172,7 +203,8 @@ a.social:hover {
   
   .flex {
       display: -ms-flexbox;      /* TWEENER - IE 10 */
-      display: flex; 
+      display: flex;
+      flex-wrap: wrap;
       max-width: 1200px;
       -ms-flex-pack: distribute;
       justify-content: space-around;
